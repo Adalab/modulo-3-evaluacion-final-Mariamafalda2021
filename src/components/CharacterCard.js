@@ -1,10 +1,25 @@
-function CharacterCard() {
+function CharacterCard(props) {
+    const getSpecies = () => {
+        if (props.character.species === 'human') {
+            return 'Humano'
+        } else if (props.character.species === 'half-giant') {
+            return 'Semi-gigante'
+        } else if (props.character.species === 'werewolf') {
+            return 'Hombre-lobo'
+        } else if (props.character.species === 'ghost') {
+            return 'Fantasma'
+        } else {
+            return 'Ser mágico'
+        };
 
+    };
     return (
         <section>
-            <img className="card__img" src="https://pbs.twimg.com/profile_images/527201530102161408/M_Uv2Xjr_400x400.jpeg" />
-            <h4 className="card__title">HERMIONE</h4>
-            <p className="card__description">Human</p>
+            <img className="card__img" src={props.character.image === '' ? 'https://static.boredpanda.com/blog/wp-content/uploads/2016/10/newborn-baby-harry-potter-photo-shoot-kayla-glover-4.jpg' : `${props.character.image}`}
+                alt={props.character.name}
+            />
+            <h4 className="card__title">{props.character.name}</h4>
+            <p className="card__description">{getSpecies()}</p>
         </section>
     );
 };
