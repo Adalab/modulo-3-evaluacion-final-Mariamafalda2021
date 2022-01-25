@@ -4,11 +4,11 @@ const CallToApi = () => {
         .then((data) => {
             const cleanData = data.map((character) => {
                 return {//nos vamos a la API y seguimos el camino para coger lo que nos interesa
-                    id: `${character.name} ${character.dateOfBirth}`,
+                    id: `${character.name} ${character.dateOfBirth}${character.actor}`,
                     name: character.name,
                     house: character.house,
                     species: character.species,
-                    status: character.alive.value,
+                    status: character.alive,
                     image: character.image,
                     gender: character.gender,
                 };

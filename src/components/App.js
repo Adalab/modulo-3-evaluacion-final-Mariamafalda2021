@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import CallToApi from '../services/CallToApi';
 import CharacterList from './CharacterList'
 import CharacterCard from './CharacterCard';
+import Header from './Header';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -16,9 +17,8 @@ const App = () => {
 
   return (
     <div>
-
-      <h2>HARRY POTTER</h2>
-      <CharacterList />
+      <Header />
+      <CharacterList characters={characters} />
       <CharacterCard />
 
     </div>
