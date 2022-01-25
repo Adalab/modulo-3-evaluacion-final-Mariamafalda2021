@@ -1,25 +1,26 @@
 import '../styles/App.scss';
-import { Route, Link, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import CallToApi from '../services/CallToApi';
+import CharacterList from './CharacterList'
+import CharacterCard from './CharacterCard';
 
 const App = () => {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    CallToApi().then((characterData) => {
+      setCharacters(characterData);
+      console.log(characterData);
+    })
+  }, [])
+
   return (
     <div>
-      <h2>Este título aparece siempre</h2>
 
-      <Route path="/contacto">
-        <h2>Este título solo aparece cuando la usuaria entra en la página de contacto</h2>
-      </Route>
+      <h2>HARRY POTTER</h2>
+      <CharacterList />
+      <CharacterCard />
 
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Ir al inicio</Link>
-          </li>
-          <li>
-            <Link to="/contacto" className="link" id="contact-link" target="_blank">Ir a contacto</Link>
-          </li>
-        </ul>
-      </nav>
     </div>
   );
 };
