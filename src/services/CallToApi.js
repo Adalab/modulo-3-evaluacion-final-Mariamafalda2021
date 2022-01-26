@@ -1,5 +1,5 @@
-const CallToApi = () => {
-    return fetch("http://hp-api.herokuapp.com/api/characters/house/gryffindor")
+const CallToApi = (handleHouse) => {
+    return fetch(`http://hp-api.herokuapp.com/api/characters/house/${handleHouse}`)
         .then((response) => response.json())//la API nos devuelve un objeto pero queremos solo los datos de RESULTS, por eso al hacer el map,elegimos results primero
         .then((data) => {
             const cleanData = data.map((character) => {

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function CharacterCard(props) {
     const getSpecies = () => {
         if (props.character.species === 'human') {
@@ -15,11 +16,13 @@ function CharacterCard(props) {
     };
     return (
         <section>
-            <img className="card__img" src={props.character.image === '' ? 'https://static.boredpanda.com/blog/wp-content/uploads/2016/10/newborn-baby-harry-potter-photo-shoot-kayla-glover-4.jpg' : `${props.character.image}`}
-                alt={props.character.name}
-            />
-            <h4 className="card__title">{props.character.name}</h4>
-            <p className="card__description">{getSpecies()}</p>
+            <Link to={`/character/${props.character.id}`}>
+                <img className="card__img" src={props.character.image === '' ? 'https://static.boredpanda.com/blog/wp-content/uploads/2016/10/newborn-baby-harry-potter-photo-shoot-kayla-glover-4.jpg' : `${props.character.image}`}
+                    alt={props.character.name}
+                />
+                <h4 className="card__title">{props.character.name}</h4>
+                <p className="card__description">{getSpecies()}</p>
+            </Link>
         </section>
     );
 };

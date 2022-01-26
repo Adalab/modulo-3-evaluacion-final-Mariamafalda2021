@@ -6,7 +6,8 @@ const FilterName = (props) => {
         })
     }
     return (
-        <>
+
+        <section>
             <label htmlFor="">Buscar por personaje:</label>
             <input
                 type="text"
@@ -15,8 +16,7 @@ const FilterName = (props) => {
                 value={props.FilterName}
                 onChange={handleInput}
             />
-
-        </>
-    )
+        </section>
+    );
 };
 export default FilterName;
