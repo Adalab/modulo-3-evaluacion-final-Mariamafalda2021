@@ -6,7 +6,7 @@ import Header from './Header';
 import Filter from './Filters';
 import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
-
+import NoResults from './NoResult';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -56,6 +56,10 @@ const App = () => {
           />
           <CharacterList
             characters={filteredCharacters} />
+          <NoResults
+            filteredCharacter={filteredCharacters}
+            filterName={filterName}
+          />
         </div>
       </Route>
       <Route path="/character/:id" render={renderCharacterDetail} />

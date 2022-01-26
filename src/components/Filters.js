@@ -2,6 +2,7 @@ import FilterHouse from "./FilterHouse";
 import FilterName from "./FilterName";
 
 const Filter = (props) => {
+
     const handleForm = (ev) => {
         ev.preventDefault();
     }

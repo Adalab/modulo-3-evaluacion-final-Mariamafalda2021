@@ -4,7 +4,7 @@ import Header from "./Header";
 function CharacterDetail(props) {
     if (props.character === undefined) {
         return (
-            <p>No encontrado</p>
+            <p>No se ha encontrado ningún personaje</p>
         )
     }
     const getGender = () => {
