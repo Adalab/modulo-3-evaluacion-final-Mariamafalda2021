@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
 function CharacterDetail(props) {
-    if (props.character.name === undefined) {
-        return 'No se encuentra lo que has buscado'
+    if (props.character === undefined) {
+        return (
+            <p>No encontrado</p>
+        )
     }
     const getGender = () => {
         return props.character.gender === 'female' ? 'Mujer' : 'Hombre';
