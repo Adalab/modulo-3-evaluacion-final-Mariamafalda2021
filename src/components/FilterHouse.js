@@ -7,7 +7,7 @@ const FilterHouse = (props) => {
     };
     return (
         <>
-            <label htmlFor="">Casa</label>
+            <label htmlFor="">Buscar por casa: </label>
             <select
                 className=""
                 name="house"

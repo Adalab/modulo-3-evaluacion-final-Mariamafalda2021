@@ -37,7 +37,7 @@ function CharacterDetail(props) {
 
             <h4 className="card__title">{props.character.name}</h4>
             <p className="card__description">Estatus: {getStatus()}</p>
-            <p className="card__description">Especie{getSpecies()}</p>
+            <p className="card__description">Especie: {getSpecies()}</p>
             <p className="card__description">Genero: {getGender()}</p>
             <p className="card__description">Casa: {props.character.house}</p>
         </section>
