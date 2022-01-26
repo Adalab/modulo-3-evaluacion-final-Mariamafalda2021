@@ -6,7 +6,7 @@ const FilterHouse = (props) => {
         });
     };
     return (
-        <>
+        <div className="house_search">
             <label htmlFor="">Buscar por casa: </label>
             <select
                 className=""
@@ -21,7 +21,7 @@ const FilterHouse = (props) => {
             </select>
 
 
-        </>
+        </div>
     );
 };
 export default FilterHouse;

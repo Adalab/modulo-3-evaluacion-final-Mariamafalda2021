@@ -8,14 +8,16 @@ const FilterName = (props) => {
     return (
 
         <section>
-            <label htmlFor="">Buscar por personaje:</label>
-            <input
-                type="text"
-                name="name"
-                id="name"
-                value={props.FilterName}
-                onChange={handleInput}
-            />
+            <div className="name_search">
+                <label htmlFor="">Buscar por personaje:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={props.FilterName}
+                    onChange={handleInput}
+                />
+            </div>
         </section>
     );
 };

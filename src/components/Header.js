@@ -2,7 +2,7 @@ function Header() {
     return (
         <>
             <header>
-                <img src="https://1000marcas.net/wp-content/uploads/2019/12/Logo-Harry-potter-500x313.png" alt="" />
+                <img src="https://img1.picmix.com/output/stamp/normal/7/0/6/9/629607_e21e1.png" alt="" />
             </header>
         </>
     )
