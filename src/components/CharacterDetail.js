@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 function CharacterDetail(props) {
     if (props.character === undefined) {
@@ -10,7 +11,7 @@ function CharacterDetail(props) {
         return props.character.gender === 'female' ? 'Mujer' : 'Hombre';
     };
     const getStatus = () => {
-        return props.character.alive === true ? 'Viv@' : 'Fallecid@';
+        return props.character.alive === true ? 'Viv@ ' : 'Fallecid@';
     };
     const getSpecies = () => {
         if (props.character.species === 'human') {
@@ -27,19 +28,25 @@ function CharacterDetail(props) {
 
     };
     return (
-        <section>
-            <Link to='/' className='detail__link'>
-                Volver
-            </Link>
+        <section className="detail">
+            <Header />
+            <div className="detail__link">
+                <Link to='/'>
+                    Volver
+                </Link>
+            </div>
 
-            <img className="card__img" src={props.character.image === '' ? 'https://static.boredpanda.com/blog/wp-content/uploads/2016/10/newborn-baby-harry-potter-photo-shoot-kayla-glover-4.jpg' : `${props.character.image}`}
-                alt={props.character.name} />
-
-            <h4 className="card__title">{props.character.name}</h4>
-            <p className="card__description">Estatus: {getStatus()}</p>
-            <p className="card__description">Especie: {getSpecies()}</p>
-            <p className="card__description">Genero: {getGender()}</p>
-            <p className="card__description">Casa: {props.character.house}</p>
+            <div className="detail__container">
+                <img className="detail__img" src={props.character.image === '' ? 'https://static.boredpanda.com/blog/wp-content/uploads/2016/10/newborn-baby-harry-potter-photo-shoot-kayla-glover-4.jpg' : `${props.character.image}`}
+                    alt={props.character.name} />
+                <div className="detail__text">
+                    <h4 className="detail__title">{props.character.name}</h4>
+                    <p className="detail__description"><i className="fas fa-heartbeat"></i>Estatus:{getStatus()}</p>
+                    <p className="detail__description">Especie: {getSpecies()}</p>
+                    <p className="detail__description">Genero: {getGender()}</p>
+                    <p className="detail__description">Casa: {props.character.house}</p>
+                </div>
+            </div>
         </section>
     );
 };

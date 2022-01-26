@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 function CharacterCard(props) {
     const getSpecies = () => {
@@ -17,11 +18,11 @@ function CharacterCard(props) {
     return (
         <section>
             <Link to={`/character/${props.character.id}`}>
-                <img className="card__img" src={props.character.image === '' ? 'https://static.boredpanda.com/blog/wp-content/uploads/2016/10/newborn-baby-harry-potter-photo-shoot-kayla-glover-4.jpg' : `${props.character.image}`}
+                <img className="cards__img" src={props.character.image === '' ? 'https://i.pinimg.com/564x/b6/1d/3e/b61d3efbd5b67f0e3ebdeaab305dd972.jpg' : `${props.character.image}`}
                     alt={props.character.name}
                 />
-                <h4 className="card__title">{props.character.name}</h4>
-                <p className="card__description">{getSpecies()}</p>
+                <h4 className="cards__title">{props.character.name}</h4>
+                <p className="cards__description">{getSpecies()}</p>
             </Link>
         </section>
     );
